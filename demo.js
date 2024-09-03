@@ -18,13 +18,17 @@ document.getElementById('primeForm').addEventListener('submit', function(event) 
         return;
     }
 
-    let isPrime = true;
+    let isPrime = true; // define a boolean variable to assume the number is prime
+
+    // Loop from 2 to the square root of the number to check for divisors
     for (let i = 2; i <= Math.sqrt(number); i++) {
+        // If the number is divisible by 'i', it's not a prime number
         if (number % i === 0) {
-            isPrime = false;
-            break;
+            isPrime = false; // Set isPrime to false as it's not a prime number
+            break; // Exit the loop because of founding a divisor
         }
     }
+    
 
     // Output: Display results with colors
     if (isPrime) {
